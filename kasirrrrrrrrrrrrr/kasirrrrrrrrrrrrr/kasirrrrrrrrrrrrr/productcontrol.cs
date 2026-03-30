@@ -155,7 +155,7 @@ namespace kasirrrrrrrrrrrrr
                     cmd.Parameters.AddWithValue("@stock", guna2NumericUpDown2.Value);
                     cmd.Parameters.AddWithValue("@id", Convert.ToInt32(selectedID));
 
-
+                     nk
                     cmd.ExecuteNonQuery();
 
                     MessageBox.Show("Data berhasil diupdate!", "Sukses");
