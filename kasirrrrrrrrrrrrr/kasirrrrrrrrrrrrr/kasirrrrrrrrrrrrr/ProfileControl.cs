@@ -29,7 +29,7 @@ namespace kasirrrrrrrrrrrrr
                 try
                 {
                     conn.Open();
-                    // Ambil data lengkap user berdasarkan ID yang ada di Session
+                   
                     string query = "SELECT * FROM users WHERE id = @id";
                     MySqlCommand cmd = new MySqlCommand(query, conn);
                     cmd.Parameters.AddWithValue("@id", UserSession.UserID);
@@ -38,14 +38,14 @@ namespace kasirrrrrrrrrrrrr
 
                     if (reader.Read())
                     {
-                        // Menampilkan data ke TextBox agar bisa diedit
+                        
                         guna2TextBox1.Text = reader["phone_number"].ToString();
                         guna2TextBox2.Text = reader["email"].ToString();
 
-                        // Menentukan tampilan berdasarkan Role yang tersimpan
+                        
                         if (UserSession.UserRole == "Customer")
                         {
-                            // Isi data customer
+                           
                             guna2TextBox4.Text = reader["cust_name"].ToString();
                             guna2TextBox3.Text = reader["cust_address"].ToString();
                             guna2TextBox5.Text = reader["cust_latitude"].ToString();
@@ -54,13 +54,13 @@ namespace kasirrrrrrrrrrrrr
                             guna2RadioButton1.Checked = true;
                             guna2RadioButton2.Checked = false;
 
-                            // Disable vendor
+                            
                             guna2GroupBox2.Enabled = false;
                             guna2GroupBox1.Enabled = true;
                         }
                         else
                         {
-                            // Isi data vendor
+                           
                             guna2TextBox10.Text = reader["vendor_name"].ToString();
                             guna2TextBox9.Text = reader["vendor_address"].ToString();
                             guna2TextBox8.Text = reader["vendor_latitude"].ToString();
@@ -69,7 +69,7 @@ namespace kasirrrrrrrrrrrrr
                             guna2RadioButton2.Checked = true;
                             guna2RadioButton1.Checked = false;
 
-                            // Disable customer
+                            
                             guna2GroupBox1.Enabled = false;
                             guna2GroupBox2.Enabled = true;
                         }

@@ -52,6 +52,7 @@ namespace kasirrrrrrrrrrrrr
                     cmd.Parameters.AddWithValue("@price", guna2NumericUpDown1.Value);
                     cmd.Parameters.AddWithValue("@stock", guna2NumericUpDown2.Value);
                     cmd.Parameters.AddWithValue("@vendorId", UserSession.UserID);
+                    
                     conn.Open();
                     cmd.ExecuteNonQuery();
 
@@ -140,7 +141,6 @@ namespace kasirrrrrrrrrrrrr
                     conn.Open();
 
                     string query = @"UPDATE products SET 
-                            is_active = @status,
                             products_name = @name,
                             price_per_unit = @price,
                             unit_stock = @stock,
@@ -149,11 +149,11 @@ namespace kasirrrrrrrrrrrrr
 
                     MySqlCommand cmd = new MySqlCommand(query, conn);
 
-                    cmd.Parameters.AddWithValue("@id", Convert.ToInt32(selectedID));
+                    
                     cmd.Parameters.AddWithValue("@name", guna2TextBox1.Text);
                     cmd.Parameters.AddWithValue("@price", guna2NumericUpDown1.Value);
                     cmd.Parameters.AddWithValue("@stock", guna2NumericUpDown2.Value);
-                    cmd.Parameters.AddWithValue("@status", comboBox2.Text);
+                    cmd.Parameters.AddWithValue("@id", Convert.ToInt32(selectedID));
 
 
                     cmd.ExecuteNonQuery();
@@ -296,6 +296,11 @@ namespace kasirrrrrrrrrrrrr
                 guna2HtmlLabel11.Text = "Rp 0";
 
             }
+        }
+
+        private void guna2Button7_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

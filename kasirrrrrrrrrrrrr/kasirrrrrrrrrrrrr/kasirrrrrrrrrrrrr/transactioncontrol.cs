@@ -16,5 +16,30 @@ namespace kasirrrrrrrrrrrrr
         {
             InitializeComponent();
         }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void guna2HtmlLabel2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2GroupBox3_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void guna2HtmlLabel6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
