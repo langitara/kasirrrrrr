@@ -499,7 +499,6 @@ namespace kasirrrrrrrrrrrrr
         {
             if (selectedID == 0)
             {
-                MessageBox.Show("Silahkan pilih product di tabel terlebih dahulu!", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -516,8 +515,10 @@ namespace kasirrrrrrrrrrrrr
             }
         }
 
+
+        private bool isUpdating = false;
         private void guna2NumericUpDown3_ValueChanged(object sender, EventArgs e)
-        {
+        { 
             HitungTotal();
         }
 
@@ -531,15 +532,15 @@ namespace kasirrrrrrrrrrrrr
                 if (qty > stock)
                 {
                     MessageBox.Show("Stock tidak cukup!");
-                    guna2NumericUpDown3.Value = (decimal)stock;
+
                     qty = stock;
                 }
 
                 // Hitung total
                 double total = price * qty;
 
-                // Contoh delivery cost (flat)
-                double deliveryCost = 15000;
+                // PPN 11% sebagai biaya tambahan (deliveryCost digunakan sebagai PPN di permintaan)
+                double deliveryCost = Math.Round(total * 0.11, 2);
                 double grandTotal = total + deliveryCost;
 
                 // Tampilkan ke label
@@ -551,6 +552,7 @@ namespace kasirrrrrrrrrrrrr
                 guna2HtmlLabel12.Text = "Rp 0";
                 guna2HtmlLabel11.Text = "Rp 0";
             }
+
         }
 
         private void guna2Button7_Click(object sender, EventArgs e)
@@ -603,7 +605,8 @@ namespace kasirrrrrrrrrrrrr
             }
 
             double totalWithoutDelivery = pricePerUnit * qty;
-            double deliveryCost = 15000; // flat
+            
+            double deliveryCost = Math.Round(totalWithoutDelivery * 0.11, 2);
 
             var main = this.FindForm() as MainForm;
             if (main != null)
@@ -638,6 +641,7 @@ namespace kasirrrrrrrrrrrrr
 
                     // update local stock variable to reflect change
                     stock = Math.Max(0, stock - qty);
+                    
 
                     // add to pending transactions view
                     // determine vendor id

@@ -68,6 +68,7 @@
             // 
             // guna2GroupBox3
             // 
+            this.guna2GroupBox3.BackColor = System.Drawing.SystemColors.ControlText;
             this.guna2GroupBox3.Controls.Add(this.guna2Button3);
             this.guna2GroupBox3.Controls.Add(this.guna2Button2);
             this.guna2GroupBox3.Controls.Add(this.guna2Button1);
@@ -82,14 +83,15 @@
             this.guna2GroupBox3.Controls.Add(this.guna2HtmlLabel5);
             this.guna2GroupBox3.Controls.Add(this.guna2HtmlLabel4);
             this.guna2GroupBox3.Controls.Add(this.guna2HtmlLabel2);
+            this.guna2GroupBox3.CustomBorderColor = System.Drawing.Color.DarkGoldenrod;
             this.guna2GroupBox3.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2GroupBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.guna2GroupBox3.ForeColor = System.Drawing.Color.Black;
             this.guna2GroupBox3.Location = new System.Drawing.Point(6, 387);
             this.guna2GroupBox3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.guna2GroupBox3.Name = "guna2GroupBox3";
             this.guna2GroupBox3.Size = new System.Drawing.Size(907, 328);
             this.guna2GroupBox3.TabIndex = 3;
-            this.guna2GroupBox3.Text = "guna2GroupBox3";
+            this.guna2GroupBox3.Text = "Details";
             this.guna2GroupBox3.Click += new System.EventHandler(this.guna2GroupBox3_Click);
             // 
             // guna2Button3
@@ -98,6 +100,7 @@
             this.guna2Button3.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.guna2Button3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.guna2Button3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button3.FillColor = System.Drawing.Color.Goldenrod;
             this.guna2Button3.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button3.ForeColor = System.Drawing.Color.White;
             this.guna2Button3.Location = new System.Drawing.Point(726, 65);
@@ -113,6 +116,7 @@
             this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button2.FillColor = System.Drawing.Color.Goldenrod;
             this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button2.ForeColor = System.Drawing.Color.White;
             this.guna2Button2.Location = new System.Drawing.Point(485, 268);
@@ -128,6 +132,7 @@
             this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button1.FillColor = System.Drawing.Color.Goldenrod;
             this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button1.ForeColor = System.Drawing.Color.White;
             this.guna2Button1.Location = new System.Drawing.Point(238, 268);
@@ -175,9 +180,9 @@
             this.guna2HtmlLabel11.ForeColor = System.Drawing.Color.Black;
             this.guna2HtmlLabel11.Location = new System.Drawing.Point(261, 101);
             this.guna2HtmlLabel11.Name = "guna2HtmlLabel11";
-            this.guna2HtmlLabel11.Size = new System.Drawing.Size(80, 19);
+            this.guna2HtmlLabel11.Size = new System.Drawing.Size(27, 19);
             this.guna2HtmlLabel11.TabIndex = 9;
-            this.guna2HtmlLabel11.Text = "delevery cost";
+            this.guna2HtmlLabel11.Text = "PPN";
             // 
             // guna2HtmlLabel10
             // 

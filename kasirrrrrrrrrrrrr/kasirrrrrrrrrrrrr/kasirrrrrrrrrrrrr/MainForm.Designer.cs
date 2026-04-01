@@ -162,7 +162,7 @@
             this.Controls.Add(this.guna2Panel2);
             this.Controls.Add(this.guna2Panel1);
             this.Name = "MainForm";
-            this.Text = "MainForm";
+            this.Text = " ";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
