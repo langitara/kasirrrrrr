@@ -516,9 +516,11 @@ namespace kasirrrrrrrrrrrrr
         }
 
 
-        private bool isUpdating = false;
+        // guard to prevent reentrant ValueChanged when we set the numeric value programmatically
+        private bool _suppressQuantityEvent = false;
         private void guna2NumericUpDown3_ValueChanged(object sender, EventArgs e)
-        { 
+        {
+            if (_suppressQuantityEvent) return;
             HitungTotal();
         }
 
@@ -531,9 +533,17 @@ namespace kasirrrrrrrrrrrrr
                 // Validasi stok
                 if (qty > stock)
                 {
-                    MessageBox.Show("Stock tidak cukup!");
-
-                    qty = stock;
+                    // clamp silently here; actual user warning is shown when attempting to buy
+                    try
+                    {
+                        _suppressQuantityEvent = true;
+                        guna2NumericUpDown3.Value = (decimal)stock;
+                        qty = stock;
+                    }
+                    finally
+                    {
+                        _suppressQuantityEvent = false;
+                    }
                 }
 
                 // Hitung total
@@ -600,7 +610,19 @@ namespace kasirrrrrrrrrrrrr
             }
             if (qty > stock)
             {
+                // Inform user and adjust the numeric control to the remaining stock.
                 MessageBox.Show("Stock tidak cukup!", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                try
+                {
+                    _suppressQuantityEvent = true;
+                    guna2NumericUpDown3.Value = (decimal)stock;
+                }
+                finally
+                {
+                    _suppressQuantityEvent = false;
+                }
+                // update totals/labels to reflect adjusted qty
+                HitungTotal();
                 return;
             }
 
